@@ -1,0 +1,25 @@
+﻿@model Vidly.ViewModels.ListMovieViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*Moj kod*@
+@*
+    @{
+        var className = Model.Customers.Count > 0 ? "popular" : null;
+    }
+    <h2 class="@className">@Model.Movie.Name</h2>
+    <p>Prikaz korisnika:</p>
+    @if (Model.Customers.Count == 0)
+    {
+        <p>Nitko nije iznajmio taj film još.</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (var customer in Model.Customers)
+            {
+                <li>@customer.Name</li>
+            }
+        </ul>
+    }*@
