@@ -195,6 +195,18 @@
     <Compile Include="Migrations\202008081420126_ApplayAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>202008081420126_ApplayAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008081723169_AddMembershipName.cs" />
+    <Compile Include="Migrations\202008081723169_AddMembershipName.Designer.cs">
+      <DependentUpon>202008081723169_AddMembershipName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008081728248_ApplayAnnotationsToMembershipName.cs" />
+    <Compile Include="Migrations\202008081728248_ApplayAnnotationsToMembershipName.Designer.cs">
+      <DependentUpon>202008081728248_ApplayAnnotationsToMembershipName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008081736037_UpdateMembershipType.cs" />
+    <Compile Include="Migrations\202008081736037_UpdateMembershipType.Designer.cs">
+      <DependentUpon>202008081736037_UpdateMembershipType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -300,6 +312,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008081420126_ApplayAnnotationsToCustomerName.resx">
       <DependentUpon>202008081420126_ApplayAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008081723169_AddMembershipName.resx">
+      <DependentUpon>202008081723169_AddMembershipName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008081728248_ApplayAnnotationsToMembershipName.resx">
+      <DependentUpon>202008081728248_ApplayAnnotationsToMembershipName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008081736037_UpdateMembershipType.resx">
+      <DependentUpon>202008081736037_UpdateMembershipType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
