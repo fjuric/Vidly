@@ -223,6 +223,14 @@
     <Compile Include="Migrations\202008082125417_Genre.Designer.cs">
       <DependentUpon>202008082125417_Genre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008091612035_DateTimeChange.cs" />
+    <Compile Include="Migrations\202008091612035_DateTimeChange.Designer.cs">
+      <DependentUpon>202008091612035_DateTimeChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008091622329_DeletedRow.cs" />
+    <Compile Include="Migrations\202008091622329_DeletedRow.Designer.cs">
+      <DependentUpon>202008091622329_DeletedRow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -236,6 +244,7 @@
     <Compile Include="ViewModels\ListCustomerViewModel.cs" />
     <Compile Include="ViewModels\ListMovieViewModel.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-lumen.css" />
@@ -300,6 +309,7 @@
     <Content Include="Views\Movie\Random.cshtml" />
     <Content Include="Views\Movie\Details.cshtml" />
     <Content Include="Views\Customer\CustomerForm.cshtml" />
+    <Content Include="Views\Movie\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -353,6 +363,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008082125417_Genre.resx">
       <DependentUpon>202008082125417_Genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008091612035_DateTimeChange.resx">
+      <DependentUpon>202008091612035_DateTimeChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008091622329_DeletedRow.resx">
+      <DependentUpon>202008091622329_DeletedRow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
