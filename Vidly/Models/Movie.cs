@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Services.Description;
+using System.Web.UI.WebControls;
+using System.Web.Mvc;
+
 namespace Vidly.Models
 {
     public class Movie
@@ -22,7 +26,7 @@ namespace Vidly.Models
 
         [Display(Name ="Release Date")]
         public DateTime ReleaseDate { get; set; }
-
+        [Range(1,20, ErrorMessage = "The filed Number in Stock must be between 1 and 20")]
         [Display(Name ="Number in Stock")]
         public byte NumberInStock { get; set; }
     }
