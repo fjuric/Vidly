@@ -47,7 +47,7 @@ namespace Vidly.Controllers.Api
             return Created(new Uri(Request.RequestUri + "/" + movie.Id), movieDto);
         }
         //PUT /api/movies/1
-        [HttpPut]
+        /*[HttpPut]
         public void UpdateMovie(int id, MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -72,6 +72,37 @@ namespace Vidly.Controllers.Api
 
             _context.Movies.Remove(movieInDb);
             _context.SaveChanges();
+        }*/
+        [HttpPut]
+        public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var movieInDb = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+            if (movieInDb == null)
+                return NotFound();
+
+            Mapper.Map(movieDto, movieInDb);
+
+            _context.SaveChanges();
+
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IHttpActionResult DeleteMovie(int id)
+        {
+            var movieInDb = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+            if (movieInDb == null)
+                return NotFound();
+
+            _context.Movies.Remove(movieInDb);
+            _context.SaveChanges();
+
+            return Ok();
         }
     }
 }
