@@ -7,6 +7,8 @@ using System.Web.Http;
 using Vidly.Models;
 using Vidly.Dtos;
 using AutoMapper;
+using System.Data.Entity;
+using Microsoft.Owin.Security.Provider;
 
 namespace Vidly.Controllers.Api
 {
@@ -18,9 +20,14 @@ namespace Vidly.Controllers.Api
             _context = new ApplicationDbContext();
         }
         //GET /api/movies
-        public IEnumerable<MovieDto> GetMovies()
+        public IHttpActionResult GetMovies()
         {
-            return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+            var moviesDto = _context.Movies
+                .Include(c => c.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);
+
+            return Ok(moviesDto);
         }
         //GET /api/movies/1
         public IHttpActionResult GetMovie(int id)

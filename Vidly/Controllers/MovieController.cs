@@ -38,16 +38,7 @@ namespace Vidly.Controllers
         }*/
         public ActionResult Index()
         {
-            var viewMovieModel = _context.Movies.Include(m => m.Genre).ToList();
-            /*var movies = new List<Movie> {
-            new Movie { Id = 1, Name = "Shrek" },
-            new Movie { Id = 2, Name = "Wall-e" }
-            };
-            var viewMovieModel = new ListMovieViewModel
-            {
-                Movies = movies
-            };*/
-            return View(viewMovieModel);
+            return View();
         }
         public ActionResult Details(int id)
         {
