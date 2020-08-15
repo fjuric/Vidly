@@ -25,5 +25,6 @@ namespace Vidly.Dtos
         public DateTime ReleaseDate { get; set; }
         
         public byte NumberInStock { get; set; }
+
     }
 }
