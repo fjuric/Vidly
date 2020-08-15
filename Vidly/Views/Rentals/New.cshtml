@@ -84,6 +84,21 @@
                 vm.movieIds.push(movie.id);
             });
 
+            $("#newRental").submit(function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: "/api/NewRentals",
+                    method: "post",
+                    data: vm
+                })
+                    .done(function () {
+                        toastr.success("Rentals successfully recorded.");
+                    })
+                    .fail(function () {
+                        toastr.error("Something unexpected happened");
+                    });
+            });
         });
     </script>
 }
