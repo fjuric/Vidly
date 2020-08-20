@@ -38,7 +38,7 @@ namespace Vidly.Controllers
         }*/
         public ActionResult Index()
         {
-            if(User.IsInRole(RoleName.CanManageMovies))
+            if (User.IsInRole(RoleName.CanManageMovies))
                 return View("List");
 
             return View("ReadOnlyList");
@@ -76,10 +76,11 @@ namespace Vidly.Controllers
                 return HttpNotFound();
 
             //konverzija iz byte nazad u string
-            if(movie.MovieImage.Length != 0) {
-            byte[] imageData = movie.MovieImage;
-            string imageBase64 = Convert.ToBase64String(imageData);
-            movie.ImageUrl = string.Format("data:image/gif;base64,{0}", imageBase64);
+            if (movie.MovieImage.Length != 0)
+            {
+                byte[] imageData = movie.MovieImage;
+                string imageBase64 = Convert.ToBase64String(imageData);
+                movie.ImageUrl = string.Format("data:image/gif;base64,{0}", imageBase64);
             }
 
             var viewModel = new MovieFormViewModel
@@ -120,9 +121,11 @@ namespace Vidly.Controllers
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.NumberInStock = movie.NumberInStock;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
-                movie.MovieImage = new byte[image.ContentLength];
-                image.InputStream.Read(movie.MovieImage, 0, image.ContentLength);
-                movieInDb.MovieImage = movie.MovieImage;
+                if(image != null) { 
+                    movie.MovieImage = new byte[image.ContentLength];
+                    image.InputStream.Read(movie.MovieImage, 0, image.ContentLength);
+                    movieInDb.MovieImage = movie.MovieImage;
+                }
             }
             _context.SaveChanges();
 
