@@ -282,6 +282,14 @@
     <Compile Include="Migrations\202008151546056_AddedPropertyToMovie.Designer.cs">
       <DependentUpon>202008151546056_AddedPropertyToMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008201523429_Deleted.cs" />
+    <Compile Include="Migrations\202008201523429_Deleted.Designer.cs">
+      <DependentUpon>202008201523429_Deleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008201543464_MovieImage.cs" />
+    <Compile Include="Migrations\202008201543464_MovieImage.Designer.cs">
+      <DependentUpon>202008201543464_MovieImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -301,6 +309,10 @@
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Vidly-20200808024613.mdf" />
+    <Content Include="App_Data\aspnet-Vidly-20200808024613_log.ldf">
+      <DependentUpon>aspnet-Vidly-20200808024613.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -555,9 +567,7 @@
     <Content Include="Views\Movie\ReadOnlyList.cshtml" />
     <Content Include="Views\Rentals\New.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -634,6 +644,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008151546056_AddedPropertyToMovie.resx">
       <DependentUpon>202008151546056_AddedPropertyToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008201523429_Deleted.resx">
+      <DependentUpon>202008201523429_Deleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008201543464_MovieImage.resx">
+      <DependentUpon>202008201543464_MovieImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

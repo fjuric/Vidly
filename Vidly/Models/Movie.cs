@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Web.Services.Description;
 using System.Web.UI.WebControls;
 using System.Web.Mvc;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Vidly.Models
 {
@@ -33,5 +34,10 @@ namespace Vidly.Models
         public byte NumberInStock { get; set; }
 
         public byte NumberAvailable { get; set; }
+
+        public byte[] MovieImage { get; set; }
+
+        [NotMapped]
+        public string ImageUrl { get; set; }
     }
 }

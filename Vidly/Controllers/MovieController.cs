@@ -75,6 +75,11 @@ namespace Vidly.Controllers
             if (movie == null)
                 return HttpNotFound();
 
+            byte[] imageData = movie.MovieImage;
+            string imageBase64 = Convert.ToBase64String(imageData);
+            movie.ImageUrl = string.Format("data:image/gif;base64,{0}", imageBase64);
+            
+
             var viewModel = new MovieFormViewModel
             {
                 Movie = movie,
@@ -87,7 +92,7 @@ namespace Vidly.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = RoleName.CanManageMovies)]
-        public ActionResult Save(Movie movie)
+        public ActionResult Save(Movie movie, HttpPostedFileBase image)
         {
             if (!ModelState.IsValid)
             {
@@ -101,6 +106,8 @@ namespace Vidly.Controllers
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
+                movie.MovieImage = new byte[image.ContentLength];
+                image.InputStream.Read(movie.MovieImage, 0, image.ContentLength);
                 _context.Movies.Add(movie);
             }
             else
