@@ -76,7 +76,7 @@ namespace Vidly.Controllers
                 return HttpNotFound();
 
             //konverzija iz byte nazad u string
-            if (movie.MovieImage.Length != 0)
+            if (movie.MovieImage != null && movie.MovieImage.Length != 0)
             {
                 byte[] imageData = movie.MovieImage;
                 string imageBase64 = Convert.ToBase64String(imageData);
@@ -110,8 +110,11 @@ namespace Vidly.Controllers
             {
                 movie.DateAdded = DateTime.Now;
                 //konverzija u byte
-                movie.MovieImage = new byte[image.ContentLength];
-                image.InputStream.Read(movie.MovieImage, 0, image.ContentLength);
+                if (image != null)
+                {
+                    movie.MovieImage = new byte[image.ContentLength];
+                    image.InputStream.Read(movie.MovieImage, 0, image.ContentLength);
+                }
                 _context.Movies.Add(movie);
             }
             else
