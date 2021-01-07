@@ -60,7 +60,7 @@ namespace Vidly.Controllers.Api
 
             return Created(new Uri(Request.RequestUri + "/" + movie.Id), movieDto);
         }
-       
+        s
         [HttpPut]
         [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)

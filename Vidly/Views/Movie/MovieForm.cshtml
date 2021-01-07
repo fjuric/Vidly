@@ -34,7 +34,7 @@
            </div>
            <div class="form-group">
                @Html.LabelFor(m => m.Movie.MovieImage, htmlAttributes: new { @class = "control-label col-md2" })
-               <input type="file" id="image" name="image" />
+               <input type="file" id="image" name="image"/>
                @Html.ValidationMessageFor(m => m.Movie.NumberInStock)
            </div>
            @Html.HiddenFor(m => m.Movie.Id)
@@ -42,7 +42,7 @@
            <button type="submit" class="btn btn-primary">Save</button>
        </th>
         <th>
-            <img src="@Model.Movie.ImageUrl" title="image" width="500" height="390" />
+            <img src="@Model.Movie.ImageUrl" title="@Model.Movie.Name" width="500" height="390" />
        </th>
          
       </tr>
